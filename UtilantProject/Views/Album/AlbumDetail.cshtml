@@ -1,0 +1,25 @@
+﻿@model IEnumerable<UtilantProject.Models.ViewModels.AlbumDetailViewModel>
+
+@{
+    ViewData["Title"] = "Album Detail";
+}
+
+<h2>
+    Album Detail @Html.DisplayFor(model => model.FirstOrDefault().AlbumTitle)
+</h2>
+
+<div class="container-fluid">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-6">
+                <img src="@Html.DisplayFor(modelItem => item.Thumbnail)" alt="">
+                <div></div>
+                <div>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
